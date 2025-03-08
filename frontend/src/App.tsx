@@ -1,7 +1,9 @@
-import teamsData from "./CollegeBasketballTeams.json"; // ✅ Import JSON
+// Import JSON file
+import teamsData from "./CollegeBasketballTeams.json"; 
 import "./App.css";
 import { useState } from "react";
 
+// welcome section
 function Welcome() {
   return (
     <>
@@ -14,9 +16,10 @@ function Welcome() {
     </>
   );
 }
-
+// make sure what types they are 
 function Card({ school, mascot, city, state }: { school: string; mascot: string; city: string; state: string }) {
   return (
+    // class to use css
     <div className="team-card">
       <h2>{school}</h2>
       <h3>Mascot: {mascot}</h3>
@@ -26,7 +29,8 @@ function Card({ school, mascot, city, state }: { school: string; mascot: string;
 }
 
 function TeamList() {
-  const [teamList] = useState(teamsData.teams); // Accessing the `teams` array from the imported object
+  // Accessing the `teams` array from the imported object
+  const [teamList] = useState(teamsData.teams); 
 
   return (
     <div className="team-list">
@@ -39,6 +43,8 @@ function TeamList() {
 
 function App() {
   return (
+    // <div> is the same as <>
+    // to return the welcome and team list 
     <>
       <Welcome />
       <TeamList />
